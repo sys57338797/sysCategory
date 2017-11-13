@@ -99,10 +99,24 @@
 + (BOOL)isIphone5And5s;
 
 #pragma mark 判断是否是6P或6sP
-+(BOOL)isIphone6P;
++ (BOOL)isIphone6P;
 
 #pragma mark 判断是否是6或6s
-+(BOOL)isIphone6;
++ (BOOL)isIphone6;
 
+/**
+ IDFA,对外唯一标示,如果用户完全重置系统（(设置程序 -> 通用 -> 还原 -> 还原位置与隐私) ，这个广告标示符会重新生成。另外如果用户明确的还原广告(设置程序-> 通用 -> 关于本机 -> 广告 -> 还原广告标示符) ，那么广告标示符也会重新生成。
+
+ @return IDFA
+ */
++ (NSString *)deviceIDFA;
+
+
+/**
+ IDFV,对内唯一标示
+
+ @return IDFV
+ */
++ (NSString *)deviceIDFV;
 
 @end

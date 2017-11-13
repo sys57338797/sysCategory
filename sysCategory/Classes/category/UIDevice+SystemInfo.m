@@ -8,6 +8,7 @@
 
 #import "UIDevice+SystemInfo.h"
 #import <sys/utsname.h>
+#import <AdSupport/AdSupport.h>
 
 
 @implementation UIDevice (SystemInfo)
@@ -102,6 +103,14 @@ NSString* deviceName()
                               encoding:NSUTF8StringEncoding];
 }
 
++ (NSString *)deviceIDFA {
+    NSString *idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    return idfa;
+}
 
++ (NSString *)deviceIDFV {
+     NSString *idfv = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    return idfv;
+}
 
 @end
